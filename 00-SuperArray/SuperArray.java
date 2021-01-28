@@ -9,7 +9,7 @@ public class SuperArray {
     this.array = new int[10];
   }//end constructor
 
-  public SuperArray(){
+  public SuperArray(int length){
     this.array = new int[Length];
   }//end constructor
 
@@ -20,12 +20,15 @@ public class SuperArray {
     int Length = this.array.length;
 
     for(int i = 0; i < this.array.length; i++ ){
-      if(array[i] == null){
+      if(isEmpty = false){
         this.array[i] = val;
         return;
       }
 
       int array[] = new int[Length + 1];
+      for(i = 0 ; i < Length; i++){
+        this.array[Length] = this.array[i];
+      }
 
     }
   }//end add
