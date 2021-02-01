@@ -1,5 +1,6 @@
 import java.util.Arrays;
 
+
 public class SuperArray {
   // instance variables
   private int[] array;
@@ -10,36 +11,44 @@ public class SuperArray {
   }//end constructor
 
   public SuperArray(int length){
-    this.array = new int[Length];
+    this.array = new int[length];
   }//end constructor
 
  //empty
  //there is Space
  //array is full
   public void add(int val){
-    int Length = this.array.length;
+    int length = this.array.length;
 
     for(int i = 0; i < this.array.length; i++ ){
-      if(isEmpty = false){
-        this.array[i] = val;
+      if(this.array[i] = 0){
+        this.array[this.count] = val;
+        this.count++;
         return;
       }
 
-      int array[] = new int[Length + 1];
+      int temp[] = new int[length + 1];
       for(i = 0 ; i < Length; i++){
-        this.array[Length] = this.array[i];
+        temp[length] = this.array[i];
       }
 
+      temp[temp.length-1 = val];
+      array = new int[temp.length];
+      array = temp;
     }
   }//end add
 
-  public boolean isEmpty(int val){
+  public boolean isEmpty(){
     for(int i = 0; i < this.array.length; i++ ){
-      if(this.array[i] != null){
+      if(this.array[i] != 0){
         return false;
       }
     }
     return true;
   }
+
+  public String toString() {
+   return Arrays.toString(this.array);
+  } //end toString method
 
 }//end SuperArray(main)
