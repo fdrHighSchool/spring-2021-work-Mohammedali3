@@ -24,5 +24,20 @@ public class Driver {
     array1.add(24);
     array1.add(108);
     System.out.println(array1);
+
+    GradeBook Student1 = new GradeBook();
+    GradeBook exams = new GradeBook();
+    GradeBook homework = new GradeBook();
+
+    exams.addExams(20);
+    exams.addExams(30);
+    exams.removeExams(2);
+    /*
+    homework.addHomework(20);
+    homework.addHomework(30);
+    homework.removeHomework(2);
+    */
+    System.out.println("Exams" + exams.TEString());
+    //System.out.println("Homework" + homework.THString());
   }
 }
