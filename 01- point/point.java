@@ -2,8 +2,8 @@ import java.util.ArrayList; // import the ArrayList class
 
 public class point {
   //instance variables
-  private int point1;
-  private int point2;
+  private int x;
+  private int y;
 
   // constructor
   public point(int x, int y) {
@@ -29,6 +29,16 @@ public class point {
     return y;
   }
 
+  // set x coordinate
+  public void setX(int x) {
+    this.x = x;
+  }// close setX
+
+  // set y coordinate
+  public void setY(int y) {
+    this.y = y;
+  }// setY
+
   public String toString() {
     return "(" + x + ", " + y + ")";
   }
@@ -42,25 +52,25 @@ public class point {
     return Math.sqrt(x * x + y * y);
   }
 
-  public int midPoint(int x1, int x2, int y1, int y2){
-    int First = x1 + x2 / 2;
-    int second = y1 + y2 /2;
-
-    Ans = First + second;
-
-    return Ans;
+  public int midPoint(Point point){
+    int mid=((this.x + point.getX())/2);
+    int vid=((this.y + point.getY())/2);
+    return new Point(mid,vid);
   }
 
-  public int distance(int point1, int point2){
-
+  public int distance(Point point){
+    return Math.sqrt(Math.pow(this.x - point.getX(), 2) + Math.pow(this.y - point.getY(), 2));
   }
 
-  public int slope(int point1, int point2){
-
+  public int slope(Point point){
+    return ((point.getY() - this.y) / (point.getX() - this.x));
   }
 
-  public int isCollinear(int point1, int point2){
-
+  public int isCollinear(Point point, Point point2){
+    if (this.slope(point) == this.slope(point2)){
+      return true;
+    }
+    return false;
   }
 
 }//end main
